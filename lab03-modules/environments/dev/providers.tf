@@ -13,6 +13,9 @@ terraform {
     storage_account_name = "sttfstatezc08rvuq"
     container_name       = "tfstate"
     key                  = "lab03-dev.tfstate"
+
+    use_azuread_auth = true
+    use_oidc         = true
   }
 }
 
