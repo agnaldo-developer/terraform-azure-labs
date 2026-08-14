@@ -24,3 +24,4 @@ crash.*.log
 .vscode/
 .idea/
 tfplan
+federated-credential.json
