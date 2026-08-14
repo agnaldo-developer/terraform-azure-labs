@@ -1,0 +1,61 @@
+name: Terraform CI
+
+on:
+  pull_request:
+    branches:
+      - main
+
+jobs:
+  terraform:
+    name: Terraform Validate
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Setup Terraform
+        uses: hashicorp/setup-terraform@v3
+
+      - name: Terraform Format Check
+        run: terraform fmt -check -recursive
+
+      - name: Terraform Init - Lab 01
+        working-directory: lab01-network
+        run: terraform init -backend=false
+
+      - name: Terraform Validate - Lab 01
+        working-directory: lab01-network
+        run: terraform validate
+
+      - name: Terraform Init - Lab 02
+        working-directory: lab02-variables-foreach
+        run: terraform init -backend=false
+
+      - name: Terraform Validate - Lab 02
+        working-directory: lab02-variables-foreach
+        run: terraform validate
+
+      - name: Terraform Init - Lab 03 DEV
+        working-directory: lab03-modules/environments/dev
+        run: terraform init -backend=false
+
+      - name: Terraform Validate - Lab 03 DEV
+        working-directory: lab03-modules/environments/dev
+        run: terraform validate
+
+      - name: Terraform Init - Lab 03 HML
+        working-directory: lab03-modules/environments/hml
+        run: terraform init -backend=false
+
+      - name: Terraform Validate - Lab 03 HML
+        working-directory: lab03-modules/environments/hml
+        run: terraform validate
+
+      - name: Terraform Init - Backend Bootstrap
+        working-directory: terraform-backend-bootstrap
+        run: terraform init -backend=false
+
+      - name: Terraform Validate - Backend Bootstrap
+        working-directory: terraform-backend-bootstrap
+        run: terraform validate
