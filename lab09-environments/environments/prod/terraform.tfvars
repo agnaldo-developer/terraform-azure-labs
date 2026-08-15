@@ -1,0 +1,2 @@
+location    = "brazilsouth"
+environment = "prod"

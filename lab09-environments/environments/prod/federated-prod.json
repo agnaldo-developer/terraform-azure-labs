@@ -1,0 +1,9 @@
+{
+  "name": "github-terraform-environment-prod",
+  "issuer": "https://token.actions.githubusercontent.com",
+  "subject": "repo:agnaldo-developer@54160066/terraform-azure-labs@1334112083:environment:prod",
+  "description": "GitHub Actions OIDC for PROD environment",
+  "audiences": [
+    "api://AzureADTokenExchange"
+  ]
+}
