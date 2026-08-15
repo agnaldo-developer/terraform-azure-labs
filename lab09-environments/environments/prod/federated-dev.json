@@ -1,0 +1,9 @@
+{
+  "name": "github-terraform-environment-dev",
+  "issuer": "https://token.actions.githubusercontent.com",
+  "subject": "repo:agnaldo-developer@54160066/terraform-azure-labs@1334112083:environment:dev",
+  "description": "GitHub Actions OIDC for DEV environment",
+  "audiences": [
+    "api://AzureADTokenExchange"
+  ]
+}

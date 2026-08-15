@@ -1,0 +1,9 @@
+{
+  "name": "github-terraform-environment-hml",
+  "issuer": "https://token.actions.githubusercontent.com",
+  "subject": "repo:agnaldo-developer@54160066/terraform-azure-labs@1334112083:environment:hml",
+  "description": "GitHub Actions OIDC for HML environment",
+  "audiences": [
+    "api://AzureADTokenExchange"
+  ]
+}
